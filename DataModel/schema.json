@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "object",
+    "properties": {
+        "list": {
+            "$ref": "#/definitions/MessageList"
+        },
+        "newMessage": {
+            "$ref": "#/definitions/NewMessage"
+        }
+    },
+    "definitions": {
+        "MessageList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "statusCode": {
+                    "type": "integer"
+                },
+                "body": {
+                    "$ref": "#/definitions/Body"
+                }
+            },
+            "required": [
+                "statusCode",
+                "body"
+            ],
+            "title": "MessageList"
+        },
+        "Body": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/Message"
+                }
+            },
+            "title": "Body"
+        },
+        "Message": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "subject": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "message",
+                "subject"
+            ],
+            "title": "Message"
+        },
+        "NewMessage": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "user": {
+                    "type": "string"
+                },
+                "operation": {
+                    "$ref": "#/definitions/Operation"
+                },
+                "subject": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "message",
+                "operation",
+                "subject",
+                "user"
+            ],
+            "title": "NewMessage"
+        },
+        "Operation": {
+                "type": "string",
+                "enum": ["add_message"]
+        }
+    }
+}

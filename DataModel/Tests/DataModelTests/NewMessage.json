@@ -1,0 +1,6 @@
+{
+      "user": "dan",
+      "operation": "add_message",
+      "subject": "pets",
+      "message" : "cats are grumpy"
+}

@@ -12,7 +12,7 @@ import ViewModel
 @main
 struct ChatAppApp: App {
     private func makeViewModel() -> ViewModel {
-        let api = API(url: URL(string: "https://abraxvasbh.execute-api.us-east-2.amazonaws.com/proto/messages")!)
+        let api = API(url: Config.apiEndpoint)
         return ViewModel(networkClient: api)
     }
 

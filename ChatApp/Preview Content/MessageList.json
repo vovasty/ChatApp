@@ -1,0 +1,25 @@
+{
+    "statusCode": 200,
+    "body": {
+        "dan": [
+            {
+                "subject": "pets",
+                "message": "dogs are happy"
+            },
+            {
+                "subject": "pets",
+                "message": "cats are grumpy"
+            }
+        ],
+        "bob": [
+            {
+                "subject": "bob stuff",
+                "message": "bob bob bob"
+            },
+            {
+                "subject": "bob stuff",
+                "message": "there once was a guy named bob"
+            }
+        ]
+    }
+}
